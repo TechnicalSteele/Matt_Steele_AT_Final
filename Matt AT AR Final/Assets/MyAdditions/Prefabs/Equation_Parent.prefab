@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 5755818250443837902}
   - component: {fileID: 4280493864869145041}
   - component: {fileID: 9176937855533765215}
+  - component: {fileID: 518842202012235088}
   m_Layer: 0
   m_Name: Equation_Parent
   m_TagString: Untagged
@@ -170,9 +171,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &3058516608237506841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,6 +349,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ed89cdd2916c547b639c970f0580d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &518842202012235088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812296596375612244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bb64a5212f4f874289430bb8798ec78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0.5, z: 0}
+  grabOffset: {x: 0, y: -0.5, z: 0}
+  grabInteractable: {fileID: 3058516608237506841}
 --- !u!1 &4129035446465316208
 GameObject:
   m_ObjectHideFlags: 0

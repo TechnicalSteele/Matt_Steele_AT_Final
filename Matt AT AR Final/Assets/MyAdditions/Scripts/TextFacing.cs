@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class TextFacing : MonoBehaviour
 {
+
+    //makes sure text is always facing camera
+
+    //isnt perfect, subject to change
     private Camera mainCamera;
 
     void Start()

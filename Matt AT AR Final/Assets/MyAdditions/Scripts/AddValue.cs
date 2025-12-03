@@ -8,7 +8,9 @@ public class AddValue : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if(EquationText == null)
+
+        //if there is an equation, add the equation that was randomly generated from equation generation
+        if(EquationText ==  null)
         {
             Debug.Log("Text is not assigned");
         }
