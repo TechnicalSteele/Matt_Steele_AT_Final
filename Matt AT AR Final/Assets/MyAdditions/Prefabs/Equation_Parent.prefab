@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 518842202012235088}
   m_Layer: 0
   m_Name: Equation_Parent
-  m_TagString: Untagged
+  m_TagString: Boxes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,8 +140,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1, y: 0.7, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 412028455655755338}
   - {fileID: 1630735593542740434}
@@ -155,9 +155,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812296596375612244}
   serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_Mass: 0.1
+  m_LinearDamping: 8
+  m_AngularDamping: 5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -166,7 +166,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
@@ -361,8 +361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb64a5212f4f874289430bb8798ec78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 0.5, z: 0}
-  grabOffset: {x: 0, y: -0.5, z: 0}
+  offset: {x: 0, y: 0.25, z: 0}
+  grabOffset: {x: 0, y: -0.3, z: 0}
   grabInteractable: {fileID: 3058516608237506841}
 --- !u!1 &4129035446465316208
 GameObject:

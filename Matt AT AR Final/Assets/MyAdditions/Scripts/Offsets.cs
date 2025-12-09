@@ -17,7 +17,7 @@ public class Offsets : MonoBehaviour
 
 
     void Start()
-        //on spawn offset 
+        
     {
         transform.position += offset;
     }
