@@ -15,7 +15,7 @@ public class Offsets : MonoBehaviour
     {
         if (applied)
         {
-            Debug.Log("Somethings not right here");
+            
             return;
         }
         applied = true;

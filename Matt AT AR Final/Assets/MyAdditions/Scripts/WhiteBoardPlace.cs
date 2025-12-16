@@ -11,6 +11,7 @@ public class WhiteBoardPlace : MonoBehaviour
     [SerializeField] private GameObject WhiteboardSpawn;
     [SerializeField] private GameObject Preview;
     [SerializeField] private ObjectSpawner ObjectSpawner;
+    
 
     private static bool placed;
 
@@ -33,6 +34,16 @@ public class WhiteBoardPlace : MonoBehaviour
     {
         if(placed)
         {
+            Destroy(gameObject);
+            
+            return;
+        }
+
+        
+
+        if(!WhiteBoardHasSpawned.CanPlace())
+        {
+            Debug.Log("No More then 1 Whiteboard!");
             Destroy(gameObject);
             return;
         }
@@ -91,7 +102,7 @@ public class WhiteBoardPlace : MonoBehaviour
         transform.SetParent(null);
         gameObject.SetActive(false);
 
-        placed = false;
+       //placed = false;
         if (ObjectSpawner != null)
         {
             ObjectSpawner.enabled = true;
