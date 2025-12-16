@@ -24,6 +24,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 3356c467b9138fc4686d8a285651ad82, type: 2}
+    - target: {fileID: 4378980467783309815, guid: 20be1f77d75b6154390fd945364a1f81, type: 3}
+      propertyPath: offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4378980467783309815, guid: 20be1f77d75b6154390fd945364a1f81, type: 3}
+      propertyPath: offset.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5598916138642766544, guid: 20be1f77d75b6154390fd945364a1f81, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -54,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8895396152815033244, guid: 20be1f77d75b6154390fd945364a1f81, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7770224
+      value: 2.87089
       objectReference: {fileID: 0}
     - target: {fileID: 8895396152815033244, guid: 20be1f77d75b6154390fd945364a1f81, type: 3}
       propertyPath: m_LocalPosition.y
@@ -62,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8895396152815033244, guid: 20be1f77d75b6154390fd945364a1f81, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.908195
+      value: -5.16908
       objectReference: {fileID: 0}
     - target: {fileID: 8895396152815033244, guid: 20be1f77d75b6154390fd945364a1f81, type: 3}
       propertyPath: m_LocalRotation.w
@@ -137,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef410964c915dfe4995795d74016635e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confirmPress: {fileID: -646570392816163950, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  confirmPress: {fileID: 4161428282466506109, guid: 3ca72bb4fa71a2345a63d9eb1c80bc83, type: 3}
   WhiteboardSpawn: {fileID: 97838778388215356, guid: 20be1f77d75b6154390fd945364a1f81, type: 3}
   Preview: {fileID: 1694158278985000394}
   ObjectSpawner: {fileID: 0}

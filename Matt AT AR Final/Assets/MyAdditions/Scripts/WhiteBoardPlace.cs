@@ -12,6 +12,12 @@ public class WhiteBoardPlace : MonoBehaviour
     [SerializeField] private GameObject Preview;
     [SerializeField] private ObjectSpawner ObjectSpawner;
 
+    private static bool placed;
+
+
+    private Vector3 lastPos;
+    private Quaternion lastRot;
+
     private bool confirmed;
     //used as increment but ended up being pointless
    // private int numOfWhiteBoards = 0;
@@ -25,6 +31,11 @@ public class WhiteBoardPlace : MonoBehaviour
     }
     public  void OnEnable()
     {
+        if(placed)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Debug.Log("Please?");
         if(ObjectSpawner != null)
         {
@@ -50,15 +61,20 @@ public class WhiteBoardPlace : MonoBehaviour
         }
         
     }
-    
-    
+
+
     /*private void OnDestroy()
     {
         Debug.Log("Destroyed!!");
     }
     purely for testing to see if script was implementing correctly
-   */ 
-
+   */
+    private void Update()
+    {
+        //updates current position so prefab can spawn on top of it
+        lastPos = transform.position;
+        lastRot = transform.rotation;
+    }
 
 
     void confirmWhiteBoard(InputAction.CallbackContext callback)
@@ -72,12 +88,16 @@ public class WhiteBoardPlace : MonoBehaviour
         confirmed = true;
         Debug.Log("It Works!");
 
-        Instantiate(WhiteboardSpawn, transform.position,transform.rotation);
-        Destroy(Preview);
+        transform.SetParent(null);
+        gameObject.SetActive(false);
+
+        placed = false;
         if (ObjectSpawner != null)
         {
             ObjectSpawner.enabled = true;
         }
+         Destroy(Preview);
+        Instantiate(WhiteboardSpawn, lastPos, lastRot);
         // numOfWhiteBoards += 1;
         //Debug.Log(numOfWhiteBoards);
     }
