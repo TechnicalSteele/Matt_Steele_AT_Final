@@ -125,3 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef410964c915dfe4995795d74016635e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  confirmPress: {fileID: 0}
+  WhiteboardSpawn: {fileID: 97838778388215356, guid: 20be1f77d75b6154390fd945364a1f81, type: 3}
+  Preview: {fileID: 1694158278985000394}

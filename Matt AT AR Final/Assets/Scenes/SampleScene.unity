@@ -815,6 +815,7 @@ GameObject:
   - component: {fileID: 436358034}
   - component: {fileID: 436358033}
   - component: {fileID: 436358035}
+  - component: {fileID: 436358036}
   m_Layer: 0
   m_Name: Object Spawner
   m_TagString: Untagged
@@ -836,8 +837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CameraToFace: {fileID: 2019294179}
   m_ObjectPrefabs:
-  - {fileID: 1812296596375612244, guid: 3a81b4bd1e8b6fc42ad71dd86c23d677, type: 3}
-  - {fileID: 4097459788646992978, guid: 62c1872a615160446b328de885b0aafe, type: 3}
+  - {fileID: 1694158278985000394, guid: e007b4f1e720f8642929b6181ceb1349, type: 3}
   m_SpawnVisualizationPrefab: {fileID: 0}
   m_SpawnOptionIndex: 0
   m_OnlySpawnInView: 1
@@ -907,6 +907,20 @@ MonoBehaviour:
     m_ManualQueueValue: 0
     m_ManualQueueTargetFrame: 0
   m_BlockSpawnWhenInteractorHasSelection: 1
+--- !u!114 &436358036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436358032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bb64a5212f4f874289430bb8798ec78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: {x: 0, y: 0.25, z: 0}
+  grabOffset: {x: 0, y: 0.25, z: 0}
 --- !u!1001 &561766089
 PrefabInstance:
   m_ObjectHideFlags: 0
