@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4378980467783309815, guid: 20be1f77d75b6154390fd945364a1f81, type: 3}
       propertyPath: offset.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5598916138642766544, guid: 20be1f77d75b6154390fd945364a1f81, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
