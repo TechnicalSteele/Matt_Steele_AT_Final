@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Interactions;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class WhiteBoardPlace : MonoBehaviour
 {
@@ -10,8 +10,11 @@ public class WhiteBoardPlace : MonoBehaviour
     [SerializeField] private InputActionReference confirmPress;
     [SerializeField] private GameObject WhiteboardSpawn;
     [SerializeField] private GameObject Preview;
+    [SerializeField] private ObjectSpawner ObjectSpawner;
 
     private bool confirmed;
+    //used as increment but ended up being pointless
+   // private int numOfWhiteBoards = 0;
 
     XRGrabInteractable interactable;
 
@@ -23,13 +26,29 @@ public class WhiteBoardPlace : MonoBehaviour
     public  void OnEnable()
     {
         Debug.Log("Please?");
-        //HoldInteraction. -= confirmWhiteBoard;
+        if(ObjectSpawner != null)
+        {
+            ObjectSpawner.enabled = false;
+        }
+
+        //one of many null issues...
+        if(confirmPress == null)
+        {
+            Debug.LogError("Confirming not assigned!!");
+        }
+
+        confirmPress.action.performed += confirmWhiteBoard;
         confirmPress.action.Enable();
 
-    }
+    } 
     private void OnDisable()
     {
-        confirmPress.action.performed -= confirmWhiteBoard;
+        if(confirmPress != null)
+        {
+
+            confirmPress.action.performed -= confirmWhiteBoard;
+        }
+        
     }
     
     
@@ -46,13 +65,21 @@ public class WhiteBoardPlace : MonoBehaviour
     {
         if(confirmed)
         {
-            return;
+            
+           return;
+           
         }
         confirmed = true;
         Debug.Log("It Works!");
 
         Instantiate(WhiteboardSpawn, transform.position,transform.rotation);
         Destroy(Preview);
+        if (ObjectSpawner != null)
+        {
+            ObjectSpawner.enabled = true;
+        }
+        // numOfWhiteBoards += 1;
+        //Debug.Log(numOfWhiteBoards);
     }
 
 }

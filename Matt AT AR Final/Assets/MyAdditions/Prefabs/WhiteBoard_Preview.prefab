@@ -41,6 +41,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 3356c467b9138fc4686d8a285651ad82, type: 2}
     - target: {fileID: 8895396152815033244, guid: 20be1f77d75b6154390fd945364a1f81, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895396152815033244, guid: 20be1f77d75b6154390fd945364a1f81, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895396152815033244, guid: 20be1f77d75b6154390fd945364a1f81, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895396152815033244, guid: 20be1f77d75b6154390fd945364a1f81, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.7770224
       objectReference: {fileID: 0}
@@ -125,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef410964c915dfe4995795d74016635e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confirmPress: {fileID: 0}
+  confirmPress: {fileID: -646570392816163950, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   WhiteboardSpawn: {fileID: 97838778388215356, guid: 20be1f77d75b6154390fd945364a1f81, type: 3}
   Preview: {fileID: 1694158278985000394}
+  ObjectSpawner: {fileID: 0}

@@ -1,0 +1,45 @@
+{
+    "name": "HoldButton",
+    "maps": [
+        {
+            "name": "HoldToSpawn",
+            "id": "df92e370-e5ac-44b9-814f-0176e842a45b",
+            "actions": [
+                {
+                    "name": "HoldToSpawn",
+                    "type": "Button",
+                    "id": "69ee8866-8532-42f4-b61a-f758d25f3395",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4f654272-9001-4771-a8d2-d63701a64f6e",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Hold(duration=0.5)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HoldToSpawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2eafdd16-8e49-490d-899a-f124a52662f9",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "Hold(duration=0.5)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "HoldToSpawn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
