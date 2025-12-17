@@ -2,19 +2,15 @@ using UnityEngine;
 
 public static class EquationGeneration
 {
-    public static (string equation , int xValue) GenerateRandomEquation()
-    {
-        int randomEquation = Random.Range(0, 4);
+    //Old Equation method, kept it in
+    
 
-       // var (left,right,x) = RandomEquation();
-        int a = Random.Range(1,  10);
-        int b = Random.Range(2, 20);
-        int x = 0;
-        
-        string equation = "";
+
+        //int x = 0;
+         //string equation = "";
         
 
-
+    /*
         switch (randomEquation)
         {
             //chooses between any of these algebra equations randomly 
@@ -42,12 +38,14 @@ public static class EquationGeneration
         return (equation, x);
 
         //potentially need to add more steps or add multiplcation/division
-    }
-
     
-    /*public static (string leftSide, string rightSide, int xValue) RandomEquation()
+     */
+
+
+
+    public static (string equation,int xValue) RandomEquation()
     {
-        int pattern = Random.Range(0, 3);
+        int pattern = Random.Range(0, 2);
         int a;
         int b;
         int x;
@@ -58,27 +56,26 @@ public static class EquationGeneration
                 a = Random.Range(1, 10);
                 x = Random.Range(0, 21);
                 b = x + a;
-                return ($"X + {a}", $"{b}",x);
+                return ($"X + {a}, ${b}",x);
             
             case 1:
                 a = Random.Range(1, 10);
                 x= Random.Range(a , a + 21);
                 b= x - a;
-                return ($"X - {a}", $"{b}", x);
-            case 2:
-                a = Random.Range(1, 10);
-                x = Random.Range(a, a + 21);
+                return ($"X - {a}, ${b}", x);
+
+            default:
+                int leftNumber = Random.Range(5,21);
+                a = leftNumber;
+                x = Random.Range (0 , a + 1);
                 b = x - a;
-                return ($"X - {a}", $"{b}", x);
-            case 3:
-                a = Random.Range(1, 10);
-                x = Random.Range(a, a + 21);
-                b = x - a;
-                return ($"X - {a}", $"{b}", x);
+                return ($"{a} - X, ${b}", x);
+
+           
         }
         
 
 
     }
-    */
+    
 }

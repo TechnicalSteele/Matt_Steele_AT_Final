@@ -77,12 +77,15 @@ public class WhiteBoardPlace : MonoBehaviour
     }
 
 
-    /*private void OnDestroy()
+    //purely for testing to see if script was implementing correctly
+    //makes sure if preview is deleted before main is placed, can place another preview
+    private void OnDestroy()
     {
         Debug.Log("Destroyed!!");
+        previewPlaced = false;
     }
-    purely for testing to see if script was implementing correctly
-   */
+   
+   
     private void Update()
     {
         //updates current position so prefab can spawn on top of it
