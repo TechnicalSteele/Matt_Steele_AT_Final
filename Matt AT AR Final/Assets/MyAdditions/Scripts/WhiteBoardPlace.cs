@@ -14,6 +14,7 @@ public class WhiteBoardPlace : MonoBehaviour
     
 
     private static bool placed;
+    private static bool previewPlaced;
 
 
     private Vector3 lastPos;
@@ -32,7 +33,7 @@ public class WhiteBoardPlace : MonoBehaviour
     }
     public  void OnEnable()
     {
-        if(placed)
+        if(placed || previewPlaced)
         {
             Destroy(gameObject);
             
@@ -61,6 +62,8 @@ public class WhiteBoardPlace : MonoBehaviour
 
         confirmPress.action.performed += confirmWhiteBoard;
         confirmPress.action.Enable();
+
+        previewPlaced = true;
 
     } 
     private void OnDisable()
@@ -108,6 +111,7 @@ public class WhiteBoardPlace : MonoBehaviour
             ObjectSpawner.enabled = true;
         }
          Destroy(Preview);
+        previewPlaced = false;
         Instantiate(WhiteboardSpawn, lastPos, lastRot);
         // numOfWhiteBoards += 1;
         //Debug.Log(numOfWhiteBoards);
