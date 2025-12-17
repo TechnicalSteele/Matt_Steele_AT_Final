@@ -5,9 +5,12 @@ public static class EquationGeneration
     public static (string equation , int xValue) GenerateRandomEquation()
     {
         int randomEquation = Random.Range(0, 4);
+
+       // var (left,right,x) = RandomEquation();
         int a = Random.Range(1,  10);
         int b = Random.Range(2, 20);
         int x = 0;
+        
         string equation = "";
         
 
@@ -40,4 +43,42 @@ public static class EquationGeneration
 
         //potentially need to add more steps or add multiplcation/division
     }
+
+    
+    /*public static (string leftSide, string rightSide, int xValue) RandomEquation()
+    {
+        int pattern = Random.Range(0, 3);
+        int a;
+        int b;
+        int x;
+
+        switch (pattern)
+        {
+            case 0:
+                a = Random.Range(1, 10);
+                x = Random.Range(0, 21);
+                b = x + a;
+                return ($"X + {a}", $"{b}",x);
+            
+            case 1:
+                a = Random.Range(1, 10);
+                x= Random.Range(a , a + 21);
+                b= x - a;
+                return ($"X - {a}", $"{b}", x);
+            case 2:
+                a = Random.Range(1, 10);
+                x = Random.Range(a, a + 21);
+                b = x - a;
+                return ($"X - {a}", $"{b}", x);
+            case 3:
+                a = Random.Range(1, 10);
+                x = Random.Range(a, a + 21);
+                b = x - a;
+                return ($"X - {a}", $"{b}", x);
+        }
+        
+
+
+    }
+    */
 }
