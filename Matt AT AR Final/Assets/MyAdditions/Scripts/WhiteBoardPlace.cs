@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
@@ -77,8 +76,7 @@ public class WhiteBoardPlace : MonoBehaviour
     }
 
 
-    //purely for testing to see if script was implementing correctly
-    //makes sure if preview is deleted before main is placed, can place another preview
+    
     private void OnDestroy()
     {
         Debug.Log("Destroyed!!");

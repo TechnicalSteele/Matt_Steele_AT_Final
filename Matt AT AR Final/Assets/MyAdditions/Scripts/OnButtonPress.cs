@@ -1,8 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 using System.Collections.Generic;
 
@@ -19,8 +17,8 @@ public class OnButtonPress : MonoBehaviour
 
     private void Start()
     {
-        Button equationBtn = button.GetComponent<Button>();
-        equationBtn.onClick.AddListener(OnClick);
+        
+       button.onClick.AddListener(OnClick);
     }
 
    
@@ -36,10 +34,10 @@ public class OnButtonPress : MonoBehaviour
     private void OnClick()
     {
 
-        if (ButtonEquationText == null)
-        {
-            Debug.Log("Text is not assigned");
-        }
+        //if (ButtonEquationText == null)
+        //{
+           // Debug.Log("Text is not assigned");
+       // }
         var newEquation = EquationGeneration.RandomEquation();
         ButtonEquationText.text = newEquation.equation;
 
@@ -48,9 +46,11 @@ public class OnButtonPress : MonoBehaviour
             Debug.Log("Text is not assigned");
         }
 
-        
-        answerBoxes[Random.Range(0,3)].SetValue(newEquation.xValue);
-        newEquation.xValue = correctAnswer;
+        //was accidently resetting the xvalue to 0 as correctAnswer is not given a value
+         //answerBoxes[Random.Range(0,3)].SetValue(newEquation.xValue);
+        //newEquation.xValue = correctAnswer;
+        //sets correctAnswer to what ever the answer to the equation is
+        correctAnswer = newEquation.xValue;
         RandomBox();
 
          
@@ -71,21 +71,36 @@ public class OnButtonPress : MonoBehaviour
 
     private void RandomBox()
     {
+
+        //Sets a random box to a random prefab
+        // https://www.youtube.com/watch?v=uAmbzST1mS0 - link to tutorial where I took int correctBox = Random.Range(0, answerBoxes.Count); from
         
-        int randomNumber;
-        for(int i = 1; i < answerBoxes.Count; i++)
+        int correctBox = Random.Range(0, answerBoxes.Count);
+        
+        //sets that prefab to have the correct answer
+        answerBoxes[correctBox].SetValue(correctAnswer);
+        
+        for(int i = 0; i < answerBoxes.Count; i++)
         {
-            
             int minNumber = correctAnswer - answerOffset;
             int maxNumber = correctAnswer + answerOffset;
-            randomNumber = Random.Range(minNumber, maxNumber);
+            int randomNumber = Random.Range(minNumber,maxNumber);
 
-            if(randomNumber != correctAnswer)
+            //if in the loop, the correctbox is chosen, igonore it.
+            //I previously didnt have this check so correct box got overridden to be a wrong answer.
+            if ( i == correctBox)
             {
-                answerBoxes[i].SetValue(randomNumber);
+                continue;
             }
-            
-            
+           
+            while (randomNumber == correctAnswer)
+            {
+                randomNumber = Random.Range(minNumber, maxNumber);
+
+            }
+            answerBoxes[i].SetValue(randomNumber);
+
+
         }
     }
     

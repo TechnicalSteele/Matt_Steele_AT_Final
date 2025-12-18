@@ -3667,7 +3667,7 @@ PrefabInstance:
       objectReference: {fileID: 7309446431110569732}
     - target: {fileID: 4954849569964106643, guid: 708254fe283e5dc409a7508b08627e8e, type: 3}
       propertyPath: answerOffset
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4954849569964106643, guid: 708254fe283e5dc409a7508b08627e8e, type: 3}
       propertyPath: ButtonEquationText

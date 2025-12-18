@@ -45,7 +45,7 @@ public static class EquationGeneration
 
     public static (string equation,int xValue) RandomEquation()
     {
-        int pattern = Random.Range(0, 2);
+        int pattern = Random.Range(0, 4);
         int a;
         int b;
         int x;
@@ -57,19 +57,28 @@ public static class EquationGeneration
                 x = Random.Range(0, 21);
                 b = x + a;
                 return ($"X + {a} = {b}",x);
-            
             case 1:
+                a = Random.Range(0, 21);
+                x = Random.Range(1, 10);
+                b = a + x;
+                return ($"{a} + X = {b}", x);
+            
+            case 2:
                 a = Random.Range(1, 10);
+                //make sure x is bigger then a!
                 x= Random.Range(a , a + 21);
                 b= x - a;
                 return ($"X - {a} = {b}", x);
+            case 3:
+                a = Random.Range(0, 21);
+                //make sure x isnt negative for simplicity atm
+                x = Random.Range(0, a + 1);
+                b = a - x;
+                return ($"{a} - X = {b}", x);
 
             default:
-                int leftNumber = Random.Range(5,21);
-                a = leftNumber;
-                x = Random.Range (0 , a + 1);
-                b = x - a;
-                return ($"{a} - X = {b}", x);
+                
+                return("Nothing works" , 0);
 
            
         }
