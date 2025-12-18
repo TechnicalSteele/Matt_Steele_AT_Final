@@ -56,20 +56,20 @@ public static class EquationGeneration
                 a = Random.Range(1, 10);
                 x = Random.Range(0, 21);
                 b = x + a;
-                return ($"X + {a}, ${b}",x);
+                return ($"X + {a} = {b}",x);
             
             case 1:
                 a = Random.Range(1, 10);
                 x= Random.Range(a , a + 21);
                 b= x - a;
-                return ($"X - {a}, ${b}", x);
+                return ($"X - {a} = {b}", x);
 
             default:
                 int leftNumber = Random.Range(5,21);
                 a = leftNumber;
                 x = Random.Range (0 , a + 1);
                 b = x - a;
-                return ($"{a} - X, ${b}", x);
+                return ($"{a} - X = {b}", x);
 
            
         }

@@ -13,7 +13,7 @@ public class AddAnswer : MonoBehaviour
         {
             Debug.Log("Text is not assigned");
         }
-        var newEquation = EquationGeneration.GenerateRandomEquation();
+        var newEquation = EquationGeneration.RandomEquation();
         AnswerText.text = newEquation.xValue.ToString();
     }
 

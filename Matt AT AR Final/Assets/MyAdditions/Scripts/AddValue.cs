@@ -13,6 +13,8 @@ public class AddValue : MonoBehaviour
        
     }
 
+    
+
     private void Awake()
     {
         //if there is no equation, add the equation that was randomly generated from equation generation
