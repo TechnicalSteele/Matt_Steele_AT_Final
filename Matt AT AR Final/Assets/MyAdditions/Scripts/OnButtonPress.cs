@@ -13,8 +13,9 @@ public class OnButtonPress : MonoBehaviour
     //public GameObject EquationSpawn;
     public TextMeshPro ButtonEquationText;
     [SerializeField] private List<AnswerBoxs> answerBoxes;
-    [SerializeField] private int AnswerOffset = 5;
+    [SerializeField] private int answerOffset = 5;
     private int correctAnswer;
+    
 
     private void Start()
     {
@@ -47,8 +48,11 @@ public class OnButtonPress : MonoBehaviour
             Debug.Log("Text is not assigned");
         }
 
+        
+        answerBoxes[Random.Range(0,3)].SetValue(newEquation.xValue);
+        newEquation.xValue = correctAnswer;
+        RandomBox();
 
-        answerBoxes[0].SetValue(newEquation.xValue);
          
 
         /*GameObject spawned = Instantiate(EquationSpawn,
@@ -63,6 +67,26 @@ public class OnButtonPress : MonoBehaviour
         }
         */
         Debug.Log("Button Pressed!!");
+    }
+
+    private void RandomBox()
+    {
+        
+        int randomNumber;
+        for(int i = 1; i < answerBoxes.Count; i++)
+        {
+            
+            int minNumber = correctAnswer - answerOffset;
+            int maxNumber = correctAnswer + answerOffset;
+            randomNumber = Random.Range(minNumber, maxNumber);
+
+            if(randomNumber != correctAnswer)
+            {
+                answerBoxes[i].SetValue(randomNumber);
+            }
+            
+            
+        }
     }
     
 }
