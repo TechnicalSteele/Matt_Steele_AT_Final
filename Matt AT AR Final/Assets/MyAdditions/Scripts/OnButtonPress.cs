@@ -46,7 +46,7 @@ public class OnButtonPress : MonoBehaviour
        // }
        if(buttonCooldown <= 0)
         {
-            buttonCooldown = 1.0f;
+            buttonCooldown = 0.5f;
         }
         var newEquation = EquationGeneration.RandomEquation();
         ButtonEquationText.text = newEquation.equation;
@@ -84,7 +84,7 @@ public class OnButtonPress : MonoBehaviour
 
     private void Update()
     {
-        if(buttonCooldown >= 0)
+        if(buttonCooldown <= 0)
         {
             buttonCooldown -= Time.deltaTime;
         }
