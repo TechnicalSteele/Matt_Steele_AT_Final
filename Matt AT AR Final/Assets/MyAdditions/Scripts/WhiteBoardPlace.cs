@@ -92,6 +92,9 @@ public class WhiteBoardPlace : MonoBehaviour
     }
 
 
+
+    //https://docs.unity3d.com/Packages/com.unity.inputsystem@1.17/api/UnityEngine.InputSystem.InputAction.CallbackContext.html
+    //
     void confirmWhiteBoard(InputAction.CallbackContext callback)
     {
         if(confirmed)

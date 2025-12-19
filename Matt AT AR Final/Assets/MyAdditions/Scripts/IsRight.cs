@@ -1,16 +1,31 @@
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class IsRight : MonoBehaviour
+
+public class IsRight : MonoBehaviour , IPointerClickHandler
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private Material m_AnswerBox;
+    [SerializeField] private Material m_Is_Right;
+    [SerializeField] private Material m_Is_Wrong;
+    private int answer;
+
+    public void OnPointerClick(PointerEventData locationData)
     {
+        Debug.Log("this kinda works gang");
+       
         
+        if(answer == EquationGeneration.RandomEquation().xValue)
+        {
+            GetComponent<MeshRenderer>().material = m_Is_Right;
+        }
+        GetComponent<MeshRenderer>().material = m_Is_Wrong;
+
     }
+    
+
+
+
+    
 }
