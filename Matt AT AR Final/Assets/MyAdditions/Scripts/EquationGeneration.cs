@@ -2,6 +2,8 @@ using UnityEngine;
 
 public static class EquationGeneration
 {
+
+    
     //Old Equation method, kept it in
     
 
@@ -71,7 +73,8 @@ public static class EquationGeneration
                 return ($"X - {a} = {b}", x);
             case 3:
                 a = Random.Range(0, 21);
-                //make sure x isnt negative for simplicity atm
+                //try to make sure x isnt negative for simplicity atm
+                //not 100% but it works...
                 x = Random.Range(0, a + 1);
                 b = a - x;
                 return ($"{a} - X = {b}", x);

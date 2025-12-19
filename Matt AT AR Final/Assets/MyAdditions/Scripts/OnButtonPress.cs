@@ -13,6 +13,12 @@ public class OnButtonPress : MonoBehaviour
     [SerializeField] private List<AnswerBoxs> answerBoxes;
     [SerializeField] private int answerOffset = 5;
     private int correctAnswer;
+    private float buttonCooldown;
+    
+
+    //https://www.youtube.com/watch?v=tcatvGLvCDc&t=752s great video on statics
+    //took use of {get; private set} used it differently (i dont need 200 of them)
+    public static int TheCorrectAnswer { get; private set;}
     
 
     private void Start()
@@ -38,6 +44,10 @@ public class OnButtonPress : MonoBehaviour
         //{
            // Debug.Log("Text is not assigned");
        // }
+       if(buttonCooldown <= 0)
+        {
+            buttonCooldown = 1.0f;
+        }
         var newEquation = EquationGeneration.RandomEquation();
         ButtonEquationText.text = newEquation.equation;
 
@@ -51,7 +61,10 @@ public class OnButtonPress : MonoBehaviour
         //newEquation.xValue = correctAnswer;
         //sets correctAnswer to what ever the answer to the equation is
         correctAnswer = newEquation.xValue;
+        TheCorrectAnswer = correctAnswer;
         RandomBox();
+
+        
 
          
 
@@ -68,6 +81,16 @@ public class OnButtonPress : MonoBehaviour
         */
         Debug.Log("Button Pressed!!");
     }
+
+    private void Update()
+    {
+        if(buttonCooldown >= 0)
+        {
+            buttonCooldown -= Time.deltaTime;
+        }
+    }
+
+    
 
     private void RandomBox()
     {
